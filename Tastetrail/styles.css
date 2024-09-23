@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: "Rakkas", serif;
+    background-color: black;
+}
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Main Title Styling */
+.content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    top: 0%;
+    animation: fadeInWithSmoke 2s ease-in-out 1s forwards;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px #777777, 0 0 20px #444444;
+}
+
+/* Bottom Navigation Links Styling */
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #777777, 0 0 20px #444444;
+}
+
+nav ul li a:hover {
+    color: #4d0000;
+}
+
+.bottom-nav {
+    position: absolute;
+    bottom: 20px;
+    z-index: 4;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 2s forwards; /* Appears 2 seconds after the title */
+}
+
+@keyframes fadeInWithSmoke {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Return Link Styling */
+.return-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.return-link:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Ensure the content page is well-placed */
+.content-page {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.content-page h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.content-page p {
+    font-size: 1.2rem;
+    margin-bottom: 700px;
+}
+/* Menu Section Styling */
+.menu-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.menu-item {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden; /* To hide the part of image that grows beyond the container */
+}
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensure the image covers the area */
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out, z-index 0s 0.4s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    position: relative; /* Keep original position */
+}
+
+/* Hover Effect: Enlarge and cover the screen */
+.menu-item:hover .menu-image {
+    transform: scale(0.5); /* Scale to a reasonable size */
+    z-index: 100; /* Bring the image to the front */
+    position: fixed; /* Fix the image in place */
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%) scale(0.5); /* Translate to center, then scale */
+    transition: transform 0.3s ease-in-out, z-index 1s; /* Smooth scaling and bring to front */
+    border-radius: 0; /* Remove border radius when enlarged */
+    max-width: none; /* Prevent any max-width limitations */
+    max-height: none; /* Prevent any max-height limitations */
+    width: auto; /* Allow the image to maintain its aspect ratio */
+    height: auto; /* Allow the image to maintain its aspect ratio */
+}
+/* Info and Contact Section */
+.info-contact-section {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 20px; /* Padding around the content */
+    margin-top: 40px; /* Space above the section */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+}
+
+.info-contact-section h2 {
+    font-size: 1.8rem; /* Size for the section title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.info-contact-section p {
+    font-size: 1rem; /* Size for the paragraph text */
+    margin: 10px 0; /* Space above and below the paragraphs */
+}
+
+/* Contact Link Styling */
+.contact-link {
+    color: #a7a7a7; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold links */
+}
+
+.contact-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Return Link Styling */
+.return-link {
+    display: inline-block; /* Make it block-level for padding */
+    margin-top: 20px; /* Space above the return link */
+    color: #ffffff; /* Color for return link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+.return-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
