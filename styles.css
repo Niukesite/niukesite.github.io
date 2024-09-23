@@ -298,3 +298,13 @@ nav ul li a:hover {
     transform: scale(1.2);
     color: #d4af37; /* Optional color change on hover */
 }
+/* Slogan Styling */
+.slogan {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #ffffff;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out 4s forwards; /* Appears 2 seconds after the title */
+    text-shadow: 0 0 10px #777777, 0 0 20px #444444;
+    margin-top: 20px;
+}
