@@ -12,11 +12,10 @@ body, html {
     min-height: 100%; /* Ensure content can grow */
     margin: 0; /* Remove any default margin */
 }
-
 /* Hero Section Styling */
 .hero {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden; /* Still hides overflow within the hero section */
     display: flex;
@@ -141,10 +140,10 @@ nav ul li a:hover {
     z-index: 3;
     color: white;
     text-align: center;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     padding: 20px;
-    padding-bottom: 50px; /* Adds space at the bottom so you can scroll */
+    padding-bottom: 0px; /* Adds space at the bottom so you can scroll */
 }
 
 .content-page h2 {
@@ -156,52 +155,78 @@ nav ul li a:hover {
     font-size: 1.2rem;
     margin-bottom: 700px;
 }
-/* Menu Section Styling */
-.menu-section {
+
+/* Menu Page */
+.menu-page .menu-section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+.menu-page {
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically */
+    flex-wrap: nowrap; /* Keeps all images in one row */
+    overflow: hidden; /* Prevents overflow if images exceed the width */
 }
 
-.menu-item {
-    position: relative;
-    width: 300px;
-    margin: 20px;
-    overflow: relative; /* To hide the part of image that grows beyond the container */
+.menu-page .menu-image {
+    width: calc(100% / 8); /* Adjust to evenly divide images */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0;
+    object-fit: cover; /* Ensures images fit nicely */
+}
+.menu-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr)); /* Divides into equal parts */
+    gap: 0; /* No gaps between images */
 }
 
-.menu-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ensure the image covers the area */
-    border-radius: 10px;
-    transition: transform 0.4s ease-in-out, z-index 0s 0.4s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    position: relative; /* Keep original position */
-}
-
-/* Hover Effect: Enlarge and cover the screen */
-.menu-item:hover .menu-image {
-    transform: scale(0.5); /* Scale to a reasonable size */
-    z-index: 100; /* Bring the image to the front */
-    position: fixed; /* Fix the image in place */
-    top: 50%; /* Center the image vertically */
-    left: 50%; /* Center the image horizontally */
-    transform: translate(-50%, -50%) scale(0.5); /* Translate to center, then scale */
-    transition: transform 0.3s ease-in-out, z-index 1s; /* Smooth scaling and bring to front */
-    border-radius: 0; /* Remove border radius when enlarged */
-    max-width: none; /* Prevent any max-width limitations */
-    max-height: none; /* Prevent any max-height limitations */
-    width: auto; /* Allow the image to maintain its aspect ratio */
-    height: auto; /* Allow the image to maintain its aspect ratio */
+.menu-page .menu-image {
+    width: 70%; /* Full width of each grid cell */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures images fill each grid cell */
 }
 /* Info and Contact Section */
+/* Make the parent container use Flexbox */
+body {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    min-height: 100vh; /* Ensure the container takes the full viewport height */
+    margin: 0; /* Remove default margin */
+    background: url('back.png') no-repeat center center fixed; /* Ensure background image is centered */
+    background-size: cover; /* Ensure background image covers the full viewport */
+}
+
+/* Info contact section */
+.contact-section {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 20px; /* Padding around the content */
+    border-radius: 0px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    position: relative; /* Ensure it's positioned above other elements */
+    z-index: 10; /* Bring it to the front */
+    max-width: 600px; /* Optional: set a max width */
+    width: 100%; /* Ensure it doesn't stretch beyond its container */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Adjust for specific contact page styling */
+.contact-page .contact-section {
+    padding: 10px;
+    margin-top: 0; /* Remove any margin-top */
+    max-width: 600px; /* Optional: set a max width */
+    width: 100%; /* Ensure it doesn't stretch beyond its container */
+}
+
 .info-contact-section {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white; /* Text color */
     padding: 20px; /* Padding around the content */
-    margin-top: 40px; /* Space above the section */
+    margin-top: 0px; /* Space above the section */
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Center the text */
 }
@@ -263,7 +288,7 @@ nav ul li a:hover {
 
 /* Info page image styling */
 .info-image {
-    max-width: 30%; /* Make image responsive */
+    max-width: 50%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
