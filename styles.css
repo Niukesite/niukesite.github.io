@@ -116,6 +116,11 @@ nav ul li a:hover {
         opacity: 1;
     }
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Return Link Styling */
 .return-link {
     display: inline-block;
@@ -137,6 +142,16 @@ nav ul li a:hover {
 /* Ensure the content page is well-placed */
 .content-page {
     position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    padding-bottom: 0px; /* Adds space at the bottom so you can scroll */
+}
+.content-page2 {
+    position: fixed;
     z-index: 3;
     color: white;
     text-align: center;
@@ -209,7 +224,7 @@ body {
     text-align: center; /* Center the text */
     position: relative; /* Ensure it's positioned above other elements */
     z-index: 10; /* Bring it to the front */
-    max-width: 600px; /* Optional: set a max width */
+    max-width: 100%; /* Optional: set a max width */
     width: 100%; /* Ensure it doesn't stretch beyond its container */
     box-sizing: border-box; /* Include padding and border in width calculation */
 }
@@ -218,7 +233,7 @@ body {
 .contact-page .contact-section {
     padding: 10px;
     margin-top: 0; /* Remove any margin-top */
-    max-width: 600px; /* Optional: set a max width */
+    max-width: 100%px; /* Optional: set a max width */
     width: 100%; /* Ensure it doesn't stretch beyond its container */
 }
 
